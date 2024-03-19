@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습장</title>
+
+    <style>
+        .area{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.alert('알림창 출력버튼')">버튼</button>
+    <br><br><br>
+    <button onclick="console.log('11콘솔버튼 출력')">콘솔버튼</button>
+
+    <br><br><br>
+    <button id="btn">알림창 출력</button>
+    <button onclick="btnClick()">콘솔 출력</button>
+
+    <br><br><br>
+
+    <button onclick="documentWrite()">화면에 출력</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            window.alert('버튼클릭');
+        }
+
+        function btnClick() {
+            console.log('30콘솔버튼 출력')
+        }
+
+        console.log('27줄 콘솔에 입력');
+        
+
+        function documentWrite(){
+            let str = "<table border='1'>"
+                    + "<tr>"
+                    + "<td>1</td>"
+                    + "<td>2</td>"
+                    + "</tr>"
+                    + "</table>";
+            document.write(str);        
+       }
+    </script>
+
+    <div class="area" id="area1">
+        자바 스크립트에서 어떤 요소(element)안의 값(content)을 가지고 온다거나 <br>
+        변경하고자 할 때 <b>innerHTML, innerText</b>라는 속성에 접근
+    </div>  
+    <button onclick="tagValue()">확인</button>
+        
+    <script>
+        function tagValue() {
+
+           let divE1 = document.getElementById("area1");
+
+           divE1.innerHTML = "<b>innerText로 속성값 변경함^^</b>"
+           divE1.style.background = "yellow";
+        }
+    </script>
+
+
+
+
+</body>
+</html>
